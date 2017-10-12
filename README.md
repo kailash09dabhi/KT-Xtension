@@ -5,6 +5,21 @@ Kt Xtension
 Group of usseful kotlin extension I made for application development in kotlin language
 and I will keep using them and edit them :)
 
+__Viewpager Xtension__
+```java
+    viewPager.onPageSelected { pageNo ->
+        supportActionBar.apply {
+          when (pageNo) {
+            0 -> {
+              title = "First Page"
+            }
+            1 -> {
+              title = "Second Page"            
+            }
+          }
+        }
+      } 
+```
 __Context Xtension__
 
 ```java
