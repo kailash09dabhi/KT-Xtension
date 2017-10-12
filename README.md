@@ -15,6 +15,10 @@ __Context Xtension__
   toast("Hello World!")
 ```
     
+__String Xtension__
+```java
+  "i am kailash dabhi".capitalizedWord() // outputs "I Am Kailash Dabhi"
+```
 License
 -------
 
