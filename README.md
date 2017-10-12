@@ -2,9 +2,17 @@
 Kt Xtension
 ============
 
-Group of usseful kotlin extension I made for application development in kotlin language
+Group of useful kotlin extension I made for application development in kotlin language
 and I will keep using them and edit them :)
 
+__TabLayout Xtension__
+```java
+   tabLayout.add {
+         tab { setText(titles[0]) }
+         tab { setText(titles[1]) }
+         tab { setText(titles[2]) }
+       }
+```
 __Viewpager Xtension__
 ```java
     viewPager.onPageSelected { pageNo ->
