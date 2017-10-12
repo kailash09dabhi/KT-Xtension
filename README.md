@@ -5,6 +5,30 @@ Kt Xtension
 Group of useful kotlin extension I made for application development in kotlin language
 and I will keep using them and edit them :)
 
+__Cursor Xtension__
+```java
+  //cursor.forEach 
+      override fun allPlaylist(): Iterable<Playlist> {
+        return sqliteDatabase
+            .rawQuery("select * from " + PlaylistTable.NAME, null)
+            .eachRow {
+              Playlist(it)
+            }
+      } 
+      
+  //cursor.toObject (use it when you want to find one raw from sqlite table)
+    override fun with(name: String): Playlist {
+      return sqliteDatabase
+          .rawQuery("select * from " + PlaylistTable.NAME + " where " + PlaylistTable.Columns.NAME + " = '" + name + "'", null)
+          .toObject(EmptyPlaylist()) {
+            Playlist(it)
+          }
+    }
+// accessing long, short, int, boolean values from cursor is easy like this:-
+  val myLong = cursor.long(AffirmationGroupTable.Columns.ID),
+  val myString = cursor.string(AffirmationGroupTable.Columns.NAME),
+  val myInt = cursor.int(AffirmationGroupTable.Columns.INDEX)   
+```
 __TabLayout Xtension__
 ```java
    tabLayout.add {
